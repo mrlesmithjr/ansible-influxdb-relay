@@ -1,0 +1,25 @@
+---
+# defaults file for ansible-influxdb-relay
+
+influxdb_relay_binary: /usr/bin/influxdb-relay
+
+influxdb_relay_bind_address: 127.0.0.1
+
+influxdb_relay_bind_port: 9096
+
+influxdb_relay_config: /etc/influxdb-relay/influxdb-relay.conf
+
+influxdb_relay_data_dir: /var/lib/influxdb-relay
+
+influxdb_relay_gopath: /opt/go
+
+influxdb_relay_log_dir: /var/log/influxdb-relay
+
+influxdb_relay_servers:
+  - name: influxdb-http
+    bind_addr: 127.0.0.1
+    bind_port: 9096
+    outputs:
+      - name: local1
+        location: http://127.0.0.1:8086/write
+    protocol: http
