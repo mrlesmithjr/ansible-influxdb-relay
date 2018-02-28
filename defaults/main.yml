@@ -3,10 +3,6 @@
 
 influxdb_relay_binary: /usr/bin/influxdb-relay
 
-influxdb_relay_bind_address: 127.0.0.1
-
-influxdb_relay_bind_port: 9096
-
 influxdb_relay_config: /etc/influxdb-relay/influxdb-relay.conf
 
 influxdb_relay_data_dir: /var/lib/influxdb-relay
