@@ -7,7 +7,7 @@ output = [
 {%   for output in item['outputs'] %}
 {%     if output['group'] is defined and output['group'] != [] %}
 {%       for host in output['group'] %}
-    { name="{{ hostvars[host]['inventory_hostname'] }}", location="http://{{ hostvars[host]['ansible_host'] }}/write" },
+    { name="{{ hostvars[host]['inventory_hostname'] }}", location="http://{{ hostvars[host]['ansible_host'] }}:{{ output['port'] }}/write" },
 {%       endfor %}
 {%     else %}
     { name="{{ output['name'] }}", location="{{ output['location'] }}" },
